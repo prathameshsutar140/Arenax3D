@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #050814;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Holographic Ticket Foil & Light Sheen */
+@keyframes holoSweep {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.holo-card-border {
+  position: relative;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(9, 13, 30, 0.98));
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  box-shadow:
+    0 24px 60px -15px rgba(2, 6, 23, 0.9),
+    0 0 32px -8px rgba(59, 130, 246, 0.25);
+}
+
+.holo-sheen {
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(56, 189, 248, 0.14) 36%,
+    rgba(139, 92, 246, 0.18) 48%,
+    rgba(59, 130, 246, 0.12) 60%,
+    transparent 76%
+  );
+  background-size: 220% 220%;
+  animation: holoSweep 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .holo-sheen {
+    animation: none;
+  }
+}
+
+/* Clean print layout for tickets */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-ticket-container {
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    break-inside: avoid;
+  }
+}

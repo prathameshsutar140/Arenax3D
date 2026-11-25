@@ -1,0 +1,6 @@
+{
+  "name": "ArenaX 3D",
+  "description": "Interactive 3D Indian cricket stadium ticketing platform featuring a 14,064-seat WebGL oval, eye-level pitch sightline previews, real-time seat locking, INR Razorpay checkout, and holographic digital tickets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
