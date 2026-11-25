@@ -205,7 +205,7 @@ Arenax3D/
 │   │   ├── SeatGenerator.ts
 │   │   ├── SeatInteraction.ts
 │   │   ├── SeatViewController.ts
-│   │   └── StadiumBuilder.ts
+│   │   ├── StadiumBuilder.ts
 │   │   └── StadiumScene.ts
 │   ├── types/
 │   │   └── stadium.ts
